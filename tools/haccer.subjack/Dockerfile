@@ -10,4 +10,8 @@ RUN apk add --no-cache ca-certificates
 
 COPY --from=build-env /go/bin/subjack /usr/bin/subjack
 
+RUN mkdir -p /src/github.com/haccer/subjack/
+
+COPY --from=build-env /go/src/github.com/haccer/subjack/fingerprints.json /src/github.com/haccer/subjack/fingerprints.json
+
 CMD subjack
