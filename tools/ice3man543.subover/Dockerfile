@@ -10,6 +10,6 @@ RUN apk add --no-cache ca-certificates
 
 COPY --from=build-env /go/bin/subover /usr/bin/subover
 
-COPY --from=build-env /go/src/github.com/ice3man543/subover/providers.json /usr/bin/providers.json
+COPY --from=build-env /go/src/github.com/ice3man543/subover/providers.json /providers.json
 
 CMD subover
